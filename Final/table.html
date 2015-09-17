@@ -1,0 +1,288 @@
+<html>
+<head>
+<title> Gridtable </title>
+<script>
+
+<!-- Creates the upper banner -->
+function bannerSet()
+	{
+	document.writeln("<table class='omega'>");
+	document.writeln("<th>WEBSITE</th>");
+	document.writeln("</table>");
+	}
+
+<!-- Files here will be filled into a grid, each array containing the filename, type, and title.-->
+var files=[
+	["fedora.pdf","pdf","Fedora Manual","FEDORA"],
+	["fedora.pdf","pdf","Apple","APPLE"],
+	["fedora.pdf","pdf","Banana","BANANA"],
+	["fedora.pdf","pdf","Beets","BEETS"],
+	["fedora.pdf","pdf","Carrot","CARROT"],
+	["fedora.pdf","pdf","Cake","CAKE"],
+	["fedora.pdf","pdf","Date","DATE"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+
+	["fedora.pdf","pdf","Perris","PERRIS"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+	["fedora.pdf","pdf","Eiffel","EIFFEL"],
+
+	["coffee.mp3",		"mpeg","Coffee and Crayons","Music"],
+	["duncedance.mp3",	"mpeg","Dunce Dance","Music"],
+	["lightning.mp3",	"mpeg","The Boy Who Fought The Lightning","Music"],
+	["rain.mp3",		"mpeg","Everyday It Rains","Music"],
+	["thrillobit.mp3",	"mpeg","Thrillobit Attacks","Music"],
+	["queen.wav",		"mpeg","Don't Stop Me Now","Music"]
+	];
+
+<!-- Creates the grid for array items -->
+function gridSetup(rows,col,array)
+	{
+	var count=0;
+	var cells= array.length;
+
+	document.writeln("<table class='beta'>");
+	document.writeln("<th colspan="+col+">Welcome to my page!</th>");
+	for (i=0; i<=rows-1; i++)
+		{
+		document.writeln("<tr>");
+
+		for (j=0; j<=col-1; j++)
+			{
+			var cellid =("cell"+count);
+
+			if (count<cells)
+				{
+				var strdoc = array[count][0];
+				var strtype= array[count][1];
+				var strname= array[count][2];
+				var item=("<a href='"+strdoc+"'type='application/"+strtype+"' target='_blank'>");
+
+				document.writeln("<td id="+cellid+" width='200'>"+item+strname+"</a></td>");
+				count++;
+				}
+			else
+				{
+				document.writeln("<td id="+cellid+" width='200'> &nbsp</td>");
+				count++;
+				}
+			}
+		document.writeln("</tr>");
+		}
+	document.writeln("</table>");
+	}
+
+<!-- Creates the search function -->
+function navSetup(options)
+	{
+	var students=["A","B","C","D","E","F","Music"];
+	var srchopt="<select id='search'>";
+
+	document.writeln("<table class='alpha'>");
+	document.writeln("<th id='nav'></th>");
+
+	for(i=0;i<students.length;i++)
+		{
+		srchopt +=("<option>"+ students[i] +"</option>");
+		}
+	srchopt += "</select>";
+
+	document.getElementById('nav').innerHTML=srchopt;
+	searchGo= ("<input type='button' name='btnSearch' value='Go!' onclick='search();'>");
+	document.getElementById('nav').innerHTML+=searchGo;
+
+	for(i=0;i<options;i++)
+		{
+		var count=i;
+		var cellid =("navcell"+count);
+		var menu=["Item 1", "Item 2", "Item 3", "Item 4","Item 5"];
+		document.writeln("<tr><td id="+cellid+">"+menu[i]+"</td></tr>");
+		}
+	document.getElementById("navcell0").innerHTML=("<input type=button value='Show All' onclick='window.location.reload();'>");
+	document.writeln("</table>");
+	}
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+
+function cellFill(rows,col,array)
+	{
+	var loops=rows*col;
+
+	window.alert("Using "+rows+" rows, and "+col+" columns.");
+	window.alert("Going to loop through "+loops+" time(s) for cells");
+	window.alert("Using array: "+array);
+
+	for (i=0;i<loops;i++)
+		{
+		var cellid =("cell"+i);
+		if (i<array.length)
+			{
+			window.alert("I would fill in cell "+cellid+" here");
+
+			var strdoc = array[i][0];
+			var strtype= array[i][1];
+			var strname= array[i][2];
+			var item=("<a href='"+strdoc+"'type='application/"+strtype+"' target='_blank'>");
+
+			document.getElementById(cellid).innerHTML=(item+strname+"</a>");
+
+			}
+		else
+			{
+			window.alert(cellid+" would be blank");
+			document.getElementById(cellid).innerHTML=("&nbsp");
+			}
+		}
+	}
+
+<!-- The actual search functions-->
+function search()
+   {
+    var count = 0;
+    var key = document.getElementById('search').value;
+	window.alert("Searching for: "+key);
+	var result;
+	var loops = files.length;
+
+	var foundFiles = new Array();
+
+	window.alert(files.length+" files' tags to search through");
+
+    for (i=0; i<loops; i++)
+		{
+		var stringToSearch = files[i][3];
+
+		for ( var j=0; j<stringToSearch.length; j++ )
+			{
+			result = myIndex( stringToSearch, key, j );
+
+			if ( result != -1 )
+				{
+		        j = result + 1;  // modify counter to start from
+		                             // location of last found character
+				foundFiles[count]=files[i];
+				count++;
+		        }
+		    break;
+		    }
+    	}
+    	if ( count == 0 )
+			window.alert(key + " not found");
+		else
+			window.alert(count + " occurrence(s) of " + key + " found");
+			window.alert(foundFiles);
+			window.alert(foundFiles.length+" relevant files found.");
+			cellFill(rows,col,foundFiles);
+   }
+function myIndex(stringToSearch,key,index)
+	{
+	// test for empty string
+	if ( stringToSearch.length == 0 || key.length == 0 )
+		{
+		return -1;
+		}
+    // always start from at least position 0
+    if ( index < 0 )
+    	{
+    	index = 0;
+		}
+    // begin searching
+    for (from=index; from < stringToSearch.length; from++ )
+    {
+		// if the first character is found
+		if ( stringToSearch.charAt( from ) == key.charAt( 0 ) )
+			{
+			var current = from + 1;
+    	    var found = true;
+    	    for (j=1; j < key.length; j++ )
+    	    	{
+    	    	if ( stringToSearch.charAt( current ) != key.charAt( j ) )
+    	    		{
+    	        	found = false;
+    	        	}
+				current++;
+    	        }
+
+    	    if ( found )
+    	    	{
+    	    	return from;
+    	    	break;
+    	    	}
+    	   	}
+    	}
+
+	return -1;
+    }
+
+</script>
+</head>
+
+<body>
+<script>
+var rows=5;
+var col =5;
+bannerSet();
+navSetup(5);
+gridSetup(rows,col,files);
+</script>
+
+<br>
+<p></p>
+
+</body>
+
+<style>
+body
+	{
+	background-color:aqua;
+	}
+table,th,td,tr
+	{
+	border: 1px solid black;
+	border-collapse:collapse;
+	}
+table.alpha
+	{
+	width:20%;
+	height:80%;
+	float:left;
+	}
+table.beta
+	{
+	width:80%;
+	height:80%;
+	float:right;
+	}
+table.omega
+	{
+	width:100%;
+	height:10%;
+	float:center;
+	}
+th
+	{
+	height:25px;
+	}
+td
+	{
+	text-align:center;
+	}
+p
+	{padding-left:20%;}
+</style>
+
+</html>
+
+
+
+
+
+
+
+
