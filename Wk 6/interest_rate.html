@@ -1,0 +1,54 @@
+<html>
+<body>
+<head>
+<title> Compound Interest Project </title>
+<style type="text/css">
+	table				{
+						width: 300 px;
+						border-collaspe:collaspe;
+						background-color: red;
+						margin : 10px;
+						}
+	table,td,th			{
+						border: 1px, solid black;
+						padding: 4px;
+						}
+		th				{
+						test-align: left;
+						color: yellow;
+						background-color: darkblue;
+						}
+		tr.oddrow		{
+						background-color: white;
+						}
+</style>
+
+
+<script>
+var myprincipal=2000;
+var rate;
+	for(rate=5; rate<=10; rate++)
+		{
+		document.writeln("<table>");
+		document.writeln("<tr><th>Year</th>");
+		document.writeln("<th> Amount of Money on Deposit </th>");
+		document.writeln("<th> Interest Rate </th></tr>");
+		var myrate = rate/100;
+
+		for (var year=1; year <=10; year++)
+			{
+			var amount= myprincipal * Math.pow(1.0 + myrate,year);
+			if ( year % 2 !==0)
+				document.writeln("<tr class='oddrow'> <td>" + year +
+					"</td><td>" + amount.toFixed(2) + "</td><td>" + myrate + "</td></tr>");
+			else
+				document.writeln("<tr> <td>" + year +
+					"</td><td>" + amount.toFixed(2) + "</td><td>" + myrate + "</td></tr>");
+			}
+
+		document.writeln("</table>");
+		}
+</script>
+</head>
+</body>
+</html>

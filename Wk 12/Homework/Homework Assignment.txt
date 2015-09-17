@@ -1,0 +1,40 @@
+Work on a monthly balance calculator
+You will be given 4 portions of the program.
+And must create the main code that uses it all together.
+OR create it on your own if it's too complex to piece together.
+Sometimes programs work better from scratch.
+
+
+
+be able to 
+
+add transaction
+	date with mm/dd/yyyy format
+	type deposit or withdrawal
+	amount
+	and add transactions button
+
+show transactions
+	with amount and remaining balance
+	likely in a scrolling box table
+		has date, amount, and remaining balance
+			seems withdrawals show a negative balance.
+
+give summary with
+	starting balance
+	total deposits
+	total withdrawals
+	ending balance
+
+
+psuedocode
+
+var startBalance = 2000;
+
+deposit 200
+
+2000+200=2200
+
+withdrawal 600
+
+2200-600=2600

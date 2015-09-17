@@ -1,0 +1,43 @@
+<html>
+<title> Grade Letter </title>
+<head>
+<script>
+var student_ID;
+var score;
+
+student_ID = window.prompt("Enter student ID Number:","0");
+student_ID_value = parseInt(student_ID);
+
+score = window.prompt("Enter score:","0");
+score_value = parseInt(score);
+
+if (score >= 90)
+{
+document.writeln("My grade is an A :");
+}
+	else
+		if (score >=80)
+		{
+			document.writeln(" My grade is B :");
+		}
+		else
+			if (score >= 70)
+				{
+				document.writeln("My grade is a C :");
+				}
+					else
+						if (score >=60)
+						{
+							document.writeln(" My grade is a D :");
+						}
+							else
+								{
+									document.writeln(" My grade is an F :");
+								}
+
+
+document.writeln("<h1> The student ID is : " + student_ID + "</h1>");
+document.writeln("<h1> The score      is : " + score      + "</h1>");
+
+</script>
+</html>

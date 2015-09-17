@@ -1,0 +1,108 @@
+<html>
+
+<title> Shop </title>
+
+<script>
+var merch=newArray(
+	"Notebook",
+	"Pen",
+	"Mechanical Pencil",
+	"Lead Refill Pack",
+	"Laptop Case",
+	"Cell Phone Case",
+	"3 Ring Binder",
+	"3-Hole Paper Refill");
+var prices=newArray(
+	5.95,
+	4.95,
+	2.95,
+	.98,
+	29.99,
+	18.99,
+	6.95,
+	2.00);
+
+function CalculateTotal()
+	{
+
+	}
+function addToCart(arrayno,amount)
+	{
+	var unitPrice =
+		parseFloat(prices[arrayno]);
+	var quantity =
+		parseInt(amount);
+	var subTotal = unitPrice * quantity;
+	alert("Added to Cart!");
+	}
+
+</script>
+
+<head bgcolor='red'>
+<center>
+<marquee width='250'>Welcome to the store!</marquee>
+</center>
+<hr size='10' color='blue'>
+</head>
+
+<body bgcolor='white'>
+
+<br><br><br>
+<p>Welcome to our store! Here, we have a variety of awesome products that can improve your every day life!</p>
+<h3>Categories</h3>
+<p>This is what we currently have available!</p>
+<form name='frmOrder'>
+
+<table border='1'>
+<tr>
+	<td height='300' width='300'>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+
+	<h1>Writing Utensils</h1>
+	</td>
+	<td height='300' width='300'>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+		****************************************<br>
+	<h1>Pen</h1>
+			<input type="text" name="txtItem1Quantity"
+						size="4" value="0">
+			<input type="button" value="Add to Cart" name="btnAddToCart"
+				onclick="addToCart(1,(parseInt(document.frmOrder.txtItem1Quantity.value)))">
+	</td>
+</tr>
+<tr>
+	<td>
+	<br><br>
+	</td>
+</table>
+</form>
+
+</body>
+
+
+</html>
+
+<!--My goal is to create a website with multiple pages, where I can add items
+	by quantity to a cart and calculate the total. Items should be in two
+	parallel arrays. That's at the minimum.
+	I should do my best to get a CSS file going for a good theme. Also maybe
+	even photos of whatever is being sold. Because then I could respond to
+	that ad and get kacash.
+-->

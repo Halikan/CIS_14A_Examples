@@ -1,0 +1,105 @@
+<html>
+<head>
+<title> Nav IP</title>
+<style>
+table,th,td,tr
+	{
+	border: 1px solid black;
+	border-collapse:collapse;
+	}
+table.alpha
+	{
+	width:20%;
+	height:80%;
+	float:left;
+	}
+table.beta
+	{
+	width:80%;
+	height:80%;
+	float:right;
+	}
+table.omega
+	{
+	width:100%;
+	height:10%;
+	float:center;
+	}
+td
+	{
+	text-align:center;
+	}
+p
+	{padding-left:20%;}
+</style>
+<script>
+// Files here will be filled into a grid, each array containing the filename, type, and title.
+var files=[
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],["fedora.pdf","pdf","Fedora"],
+	["fedora.pdf","pdf","Fedora"],];
+
+function gridSetup(rows,col)
+	{
+	var count=0;
+
+	document.writeln("<table class='beta'>");
+	document.writeln("<th colspan="+col+">Welcome to my page!</th>");
+	for (i=0; i<=rows-1; i++)
+		{
+		document.writeln("<tr>");
+
+		for (j=0; j<=col-1; j++)
+			{
+			var cellid =("cell"+count);
+
+			var strdoc = files[count][0];
+			var strtype= files[count][1];
+			var strname= files[count][2];
+			var item=("<a href='"+strdoc+"'type='application/"+strtype+"' target='_blank'>");
+
+			document.writeln("<td id="+cellid+" width='200'>"+item+strname+"</td>");
+			count++;
+			}
+		document.writeln("</tr>");
+		}
+	document.writeln("</table>");
+	}
+
+function navSetup(options)
+	{
+	document.writeln("<table class='alpha'>");
+	document.writeln("<th>Navigation</th>");
+	for(i=0;i<options;i++)
+		{
+		document.writeln("<tr><td>YEP</td></tr>");
+		}
+	document.writeln("</table>");
+	}
+
+function bannerSet()
+	{
+	document.writeln("<table class='omega'>");
+	document.writeln("<th>WEBSITE</th>");
+	document.writeln("</table>");
+	}
+
+</script>
+</head>
+
+<body>
+<script>
+bannerSet();
+navSetup(5);
+gridSetup(5,5);
+</script>
+<br>
+<p>Come one, come all.</p>
+</body>
+</html>

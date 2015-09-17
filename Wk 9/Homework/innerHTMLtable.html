@@ -1,0 +1,150 @@
+<html>
+<script type="text/javascript">
+var merch=[
+	"Notebook",
+	"Pen",
+	"Mechanical Pencil",
+	"Lead Refill Pack",
+	"Laptop Case",
+	"Cell Phone Case",
+	"3 Ring Binder",
+	"3-Hole Paper Refill"];
+var prices=[
+	"5.95",
+	"4.95",
+	"2.95",
+	"0.98",
+	"29.99",
+	"18.99",
+	"6.95",
+	"2.00"];
+
+var col = 4;
+var rows = merch.length;
+var count = 0;
+
+var inCart=newArray(merch.length);
+for(i in merch)
+	{
+	inCart[i]=0;
+	}
+
+function tableSetup()
+	{
+	for (i=0; i<=rows-1; i++)
+		{
+		document.writeln("<tr>");
+
+		for (j=0; j<=col-1; j++)
+			{
+			var cellid =("cell"+count);
+			document.writeln("<td id="+cellid+">"+count+"</td>");
+			count++;
+			}
+		document.writeln("</tr>");
+		}
+	document.writeln("</table>");
+
+	}
+
+function change()
+	{
+	count=0;
+	for (i=0; i<=rows-1; i++)
+		{
+		for (j=0; j<=col-1; j++)
+			{
+			var cellid =("cell"+count);
+
+
+			if (count%4==0)
+				{
+					document.getElementById(cellid).innerHTML=merch[i];
+				}
+			else if (count%4==1)
+				{
+				document.getElementById(cellid).innerHTML=prices[i];
+				}
+			else if (count%4==2)
+				{
+				var itemname=("txtQ"+i);
+				var btnname=("btnAdd"+i);
+
+				var qty=("<input type='number' name="+itemname+" width='10' step='1' value='0'>");
+
+				var btn=("<input type='button' value='Update' name="+
+							btnname+" onclick='addToCart("+i+")'>");
+				var quantity=qty+btn;
+				document.getElementById(cellid).innerHTML=quantity;
+				}
+			else if (count%4==3)
+				{
+				cartname=("txtCart"+i);
+				cartquantity=("<input type='text' name="+cartname+" size='1' value='0'>");
+				cart=("Amount in Cart:"+cartquantity);
+				document.getElementById(cellid).innerHTML=cart;
+				}
+
+			count++;
+			}
+		}
+	}
+function addToCart(item)
+	{
+	var cellid = ("cellid2");
+	var loc=(cellid+".txtQ"+item+".value");
+	var amt= parseInt(loc);
+	alert(amt);
+
+	}
+</script>
+<body>
+
+<form name='frmOrder'>
+<table border='1'>
+	<tr>
+	<td width='150'>Item</td>
+	<td width='50'>Price</td>
+	<td width='150'>Quantity</td>
+	<td width='150'>Subotal:
+					<input type="text" name="txtSubtotal"
+					size="8" value="0.00"></td>
+	</tr>
+<script>
+tableSetup();
+change();
+</script>
+</form>
+
+<h1> Your Total is: </h1>
+<input type='text' id='total' name='total' size='10' value='0'>
+
+</body>
+</html>
+
+<!--
+
+It's going well. Kind of. I'm stumped. >.>
+All that's left:
+
+Make Add Button relative to index at creation
+	Attempted to use itemname's value, getting error.
+	Was using drycleaner.html for reference.
+	need to find the proper way to reference the quantity's .value
+
+Create inCart values for each item in for loops
+	likely with a return value from add to cart adhering to
+	a subtotal created at generation.
+	UPDATE: Have used a for loop to create a third parallel array that uses the same index as the merchandise.
+
+update subttoal and Total function added to each button
+	Perhaps they'll call a total function hardcoded into
+	the end of add to cart
+
+add remove button if there is time
+	pretty much references the add function, but with a negative
+	number. Must check for values below 0.
+
+
+
+-->

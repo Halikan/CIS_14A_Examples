@@ -1,0 +1,122 @@
+<html>
+<head>
+<title> Balance Calculator </title>
+</head>
+
+<script type='text/javascript'>
+var balance=0;
+var deposits=0;
+var withdrawals=0;
+
+function addTran()
+{
+if(document.frmTran.txtDate.value.length<6)
+	{
+	alert("Error. Please enter a 6 digit date");
+	return;
+	}
+
+var date = parseInt(document.frmTran.txtDate.value);
+var type = (document.frmTran.cboType.value);
+var amount = parseFloat(document.frmTran.txtAmount.value);
+if(isNaN(amount))
+	{
+	alert("Please enter a digit-only amount.");
+	return;
+	}
+
+if(type=="Deposit")
+	{
+	deposits+=1;
+	document.frmSummary.txtDeposits.value=deposits;
+	}
+else
+	{
+	withdrawals++;
+	amount= amount*-1;
+	document.frmSummary.txtWithdrawals.value=withdrawals;
+	}
+balance += amount;
+document.frmSummary.txtBalance.value=balance;
+
+updateDetails(date,type,amount,balance);
+}
+
+
+function updateDetails(date,type,amount,balance)
+{
+x=("<table border='1'><tr><td width='100'>"+type+"</td><td width='100'>"+amount+"</td><td width='100'>"+date+"</td><td width='100'>"+balance+"</tr></table>");
+
+document.getElementById('details').innerHTML+=x;
+
+}
+
+</script>
+
+<body>
+<b><h1>Balance Calculator</h1></b>
+<form name='frmTran'>
+<table border='1'>
+	<tr>
+		<td>Date:</td>
+		<td><input type="text" Name="txtDate" size="8" maxlength="6"></td>
+	</tr>
+	<tr>
+		<td>Type:</td>
+		<td><select size="1" name="cboType">
+			<option>Deposit</option>
+			<option>Withdrawal</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Amount:</td>
+		<td><input type="text" Name="txtAmount" size="8"></td>
+	</tr>
+</table>
+<input type="button" name="submit" value="Submit"
+					onclick="addTran();">
+</form>
+
+<hr>
+//Box with table to show transactions
+
+<table border='1' id='dets'>
+	<tr>
+		<td width='100'>Type</td>
+		<td width='100'><center>Amount</center></td>
+		<td width='100'><center>Date</center></td>
+		<td width='100'><center>Remaining Balance</center></td>
+	</tr>
+</table>
+<div style="overflow: auto; width:424px; height:200px; border:2px solid black;">
+<span id='details'></span>
+</div>
+
+<hr>
+//table for summary
+<form name='frmSummary'>
+<table border='1'>
+	<tr>
+		<td>Starting Balance:</td>
+		<td><input type="text" Name="txtSBalance" size="8" value="0"></td>
+	</tr>
+	<tr>
+		<td>Withdrawals:</td>
+		<td><input type="text" Name="txtWithdrawals" size="8" value="0"></td>
+	</tr>
+	<tr>
+		<td>Deposits:</td>
+
+		<td><input type="text" Name="txtDeposits" size="8" value="0"></td>
+	</tr>
+	<tr>
+		<td> Current Balance:</td>
+		<td><input type="text" Name="txtBalance" size="8" value="0"></td>
+	</tr>
+</table>
+</form>
+
+</body>
+
+</html>

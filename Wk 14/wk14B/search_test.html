@@ -1,0 +1,85 @@
+<HTML>
+
+<HEAD>
+<TITLE>Search for text </TITLE>
+
+<SCRIPT LANGUAGE = "JavaScript">
+   function search()
+   {
+      var count = 0;
+      var key = document.myForm.key.value;
+      var stringToSearch = document.myForm.searchString.value;
+      var result;
+
+      for ( var i = 0; i < stringToSearch.length; ++i ) {         
+         result = myIndexOf( stringToSearch, key, i );
+
+         if ( result != -1 ) {
+            ++count;
+            i = result + 1;  // modify counter to start from 
+                             // location of last found character
+         }
+         else
+            break;
+      }         
+      
+      if ( count == 0 )
+         document.myForm.output.value = key + " not found";
+      else
+         document.myForm.output.value = count + " occurrence(s) of " + key + " found";
+   }
+   
+   function myIndexOf( stringToSearch, key, index )
+   {
+      // test for empty string
+      if ( stringToSearch.length == 0 || key.length == 0 ) 
+         return -1;
+
+      // always start from at least position 0
+      if ( index < 0 )
+         index = 0;      
+
+      // begin searching
+      for ( var from = index; from < stringToSearch.length; ++from ) {
+      
+         // if the first character is found
+         if ( stringToSearch.charAt( from ) == key.charAt( 0 ) ) {
+            var current = from + 1;
+            var found = true;
+            
+            for ( var j = 1; j < key.length; ++j ) {
+               if ( stringToSearch.charAt( current ) != key.charAt( j ) ) {
+                  found = false;
+                  break;
+               }
+               
+               ++current;
+            }
+            
+            if ( found ) {
+               return from;
+               break;
+            }
+         }                  
+      }
+
+      return -1;
+   }
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM NAME = "myForm">
+   <P>Enter some text<BR>
+   <TEXTAREA NAME = "searchString" ROWS = "4" COLS = "55"></TEXTAREA></P>
+   <P>Enter a string to search for
+   <INPUT NAME = "key" TYPE = "text" SIZE = "5">
+   <INPUT TYPE = "button" VALUE = "Search" ONCLICK = "search()"</P>
+   <P>Results
+      <INPUT NAME = "output" TYPE = "text" SIZE = "40"></P>
+</FORM>
+</BODY>
+</HTML>
+<!-- 
+ ****************************************************************
+-->

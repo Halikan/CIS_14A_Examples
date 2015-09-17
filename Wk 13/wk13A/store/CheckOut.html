@@ -1,0 +1,98 @@
+<html>
+
+  <head>
+    <title>Center Park - Store Checkout</title>
+
+    <script language="JavaScript">
+    <!--
+      var total = 0;
+    
+      function getCookieValue( name )
+      {
+        var c = document.cookie;
+        var begin = c.indexOf( name );
+        var ind = begin + name.length
+        if( begin < 0 || c.charAt(ind) == ";")
+            return( "" );
+        begin += name.length + 1;
+        var end = c.indexOf( ";", begin );
+        if( end == -1 ) end = c.length;
+        return( c.slice( begin, end ) );
+      }
+      
+      function getItemName( item )
+      {
+        var c = getCookieValue( item );
+        if( c )
+        {
+          return( c.split( "," )[0] );
+        }
+        else return( "" );
+      }
+
+      function getItemPrice( item )
+      {
+        var c = getCookieValue( item );
+        if( c )
+        {
+          return( c.split( "," )[1] );
+        }
+        else return( "" );
+      }
+      
+      function fixTotal( n )
+      {
+        n *= 100;
+        var good = parseInt( n );
+        while( good < n ) good += 1;
+        return( good / 100 );
+      }
+      
+      function setCustoms()
+      {
+        var bg = getCookieValue( "bgColor" );
+        var fg = getCookieValue( "fgColor" );
+        if( bg != "" ) document.bgColor = bg;
+        if( fg != "" ) document.fgColor = fg;
+      }
+    // -->
+    </script>
+  </head>
+  
+  <body onLoad="JavaScript: setCustoms();">
+    <b><font size="6">Center Park School Store -</font></b>
+    <font size="4">for all your school paraphernalia needs</font><br><br>
+    
+    <form>
+      <table width="100%" border="2">
+        <script language="JavaScript">
+        <!--
+          for( i = 1 ; i <= parseInt( getCookieValue( "items" ) ) ; i++ )
+          {
+            if( getItemName( "item" + i ) != "" && getItemPrice( "item" + i ) != undefined )
+            {
+              document.write( "<tr><td>" );
+              document.write( getItemName( "item" + i ) + "</td><td>" );
+              document.write( getItemPrice( "item" + i ) );
+              document.write( "</td></tr>" );
+              
+              total += parseFloat( getItemPrice( "item" + i ) );
+            }
+          }
+        // -->
+        </script>
+        <tr>
+          <td><b>Total</b></td>
+          <td>$
+            <script language="JavaScript">
+            <!--
+              document.write( fixTotal( total ) );
+            -->
+            </script>
+          &nbsp;</td>
+        </tr>
+      </table>
+    </form>
+  </body>
+
+</html>

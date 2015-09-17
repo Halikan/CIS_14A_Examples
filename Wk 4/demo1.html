@@ -1,0 +1,27 @@
+<html>
+<script>
+var astring="A";
+var anumber=1;
+
+function test(astring,anumber)
+	{
+	astring="B";
+	anumber=2;
+	document.write("<br><br><br> During function call <br>");
+	document.write("astringcopy=", astring, "<br>");
+	document.write("anumber=",anumber,"<br>");
+
+	}
+
+	document.write("<br><br><br> Before function call <br>");
+	document.write("astringcopy=", astring, "<br>");
+	document.write("anumber=",anumber,"<br>");
+
+	test(astring,anumber);
+
+	document.write("<br><br><br> After function call <br>");
+	document.write("astringcopy=", astring, "<br>");
+	document.write("anumber=",anumber,"<br>");
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<title> Calculating Deposit </title>
+<script>
+
+var loan_amount;
+var remainder;
+var deposit;
+
+loan_amount=window.prompt("Please enter the loan amount :");
+loan_amount_value=parseInt(loan_amount);
+
+if (loan_amount < 25000)
+	{
+	deposit = loan_amount_value * .05
+	}
+	else if (loan_amount_value < 50000)
+		{
+		remainder = loan_amount_value-25000;
+		deposit =(1250 + remainder * .10);
+		}
+		else if (loan_amount_value <= 100000)
+			{
+			remainder = loan_amount_value-50000;
+			deposit = (5000 + remainder * .25);
+			}
+			else
+				{
+				window.prompt("Loans in excess of $100,000 are not allowed.");
+				}
+
+document.writeln("<h1>The loan    amount is : $" + loan_amount_value + "</h1>");
+document.writeln("<h1>The deposit amount is : $" + deposit           + "</h1>");
+
+</script>
+</html>

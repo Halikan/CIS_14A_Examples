@@ -1,0 +1,57 @@
+<html>
+<head>
+<script language="JavaScript/text">
+var merch=[
+	"Notebook",
+	"Pen",
+	"Mechanical Pencil",
+	"Lead Refill Pack",
+	"Laptop Case",
+	"Cell Phone Case",
+	"3 Ring Binder",
+	"3-Hole Paper Refill"];
+var prices=[
+	"5.95",
+	"4.95",
+	"2.95",
+	"0.98",
+	"29.99",
+	"18.99",
+	"6.95",
+	"2.00"];
+</script>
+
+</body>
+<form name='frmOrder'>
+<table border='1'>
+	<tr>
+	<td width='150'>Item</td>
+	<td width='50'>Price</td>
+	<td width='150'>Quantity</td>
+	<td width='150'>Subotal:
+					<input type="text" name="txtSubtotal"
+					size="8" value="0.00"></td>
+	</tr>
+
+	<tr>
+	<td id=cell0>
+		<merch[0]>
+	</td>
+	<td>
+		prices[0];
+	</td>
+	<td>
+		<input type='text' name="+itemQ0+" size='1' value='0'>
+		<input type='button' value='Add' name="+btnAdd0" onclick='addToCart("+i+")'>
+	</td>
+	<td>
+		<input type='text' name="inCart0" size='1' value='0'>
+	</td>
+	</tr>
+
+
+</table>
+</form>
+</body>
+
+</html>

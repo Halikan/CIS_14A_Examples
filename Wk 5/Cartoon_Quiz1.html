@@ -1,0 +1,59 @@
+<html>
+<head>
+<title> Cartoon Quiz I </title>
+<script>
+function scoreQuestion1(answer)
+{
+	if (answer =="a")
+		alert("Incorrect Answer");
+	if (answer =="b")
+		alert("Correct Answer");
+	if (answer =="c")
+		alert("Incorrect Answer");
+	if (answer =="d")
+		alert("Incorrect Answer");
+}
+function scoreQuestion2(answer)
+{
+	if (answer =="a")
+		alert("Incorrect Answer");
+	if (answer =="b")
+		alert("Incorrect Answer");
+	if (answer =="c")
+		alert("Correct Answer");
+	if (answer =="d")
+		alert("Incorrect Answer");
+}
+
+
+</script>
+</head>
+
+<body>
+<center>
+<h1> Cartoon Quiz I</h1>
+</center>
+Answer ALL the questions on the quiz.
+<form> <!--form is a container for objects.-->
+<p>
+<b>1. What is the name of Walt Disney's famous mouse? </b></p>
+<input type=radio name=question1 value="a" onclick="scoreQuestion1(this.value)">  Mighty Mouse <br>
+<input type=radio name=question1 value="b" onclick="scoreQuestion1(this.value)">  Mickey Mouse <br>
+<input type=radio name=question1 value="c" onclick="scoreQuestion1(this.value)">  Marty Mouse <br>
+<input type=radio name=question1 value="d" onclick="scoreQuestion1(this.value)">  Melvin Mouse <br>
+
+<p>
+<b>2. The character Buzz Lightyear was featured in which animated film? </b></p>
+<input type=radio name=question2 value="a" onclick="scoreQuestion2(this.value)">  Fantasia <br>
+<input type=radio name=question2 value="b" onclick="scoreQuestion2(this.value)">  Hercules <br>
+<input type=radio name=question2 value="c" onclick="scoreQuestion2(this.value)">  Toy Story <br>
+<input type=radio name=question2 value="d" onclick="scoreQuestion2(this.value)">  Mulan <br>
+
+
+<!--
+	this :refers to the last object that has been used
+	form: a container for objects
+	p: paragraph
+	b: bold
+	br: break, as in next line
+-->

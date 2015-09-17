@@ -1,0 +1,36 @@
+<html>
+<title> Building Cost </title>
+<script>
+
+var building_cost;
+var fee;
+var remainder;
+remainder=0;
+
+building_cost = window.prompt("Please enter the building cost : $");
+building_cost_value = parseInt(building_cost);
+
+if (building_cost_value <= 5000)
+	{
+	fee = building_cost_value*.08
+	document.writeln("The fee is :" + fee );
+	}
+	else
+		if (building_cost <= 80000)
+			{
+			remainder = building_cost_value-5000;
+			fee = (5000*.08) + (remainder*.03);
+			}
+		else
+			if (building_cost > 80000)
+				{
+				remainder = building_cost_value-5000;
+				fee = (5000*.08) + (remainder*.025);
+				}
+
+document.writeln("<h2> The building cost is : $" + building_cost_value + "</h2>");
+document.writeln("<h1> The remainder     is : $" + remainder           + "</h1>");
+document.writeln("<h1> The fee           is : $" + fee                 + "</h1>");
+
+</script>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+<Title> Cartoon Quiz V </title>
+<script>
+function scoreQuestions(number,answer)
+{
+switch (number)
+     {
+     case 1:
+           if (answer=='b')
+
+        alert("correct Answer.");
+    else
+       alert("Incorrect answer");
+       break;
+
+   case 2:
+
+            if(answer=='c')
+                alert("correct answer");
+                  else
+                     alert("Incorrect answer");
+                      break;
+            }
+    }
+
+
+
+
+
+
+</script>
+</head>
+<body>
+<center>
+<h1> Carton Quiz I </h1>
+</center>
+Answer All the questions on the quiz.
+<form>
+<p>
+<b>1. what is the name of Walt Disney's Famous mouse? </b></p>
+<input type=radio Name=question1 value="a" onclick="scoreQuestions(1,this.value)"> Mighy Mouse <br>
+<input type=radio Name=question1 value="b" onclick="scoreQuestions(1,this.value)"> Micky Mouse <br>
+<input type=radio Name=question1 value="c" onclick="scoreQuestions(1,this.value)"> Marty Mouse <br>
+<input type=radio Name=question1 value="d" onclick="scoreQuestions(1,this.value)"> Melvin Mouse <br>
+
+<p>
+<b>2. The charecter Buzz lightyear was featured in which animated film? </b></p>
+    <input type=radio Name=question2 value="a" onclick="scoreQuestions(2,this.value)"> Fantasia <br>
+	<input type=radio Name=question2 value="b" onclick="scoreQuestions(2,this.value)"> Hercules <br>
+	<input type=radio Name=question2 value="c" onclick="scoreQuestions(2,this.value)"> Toy story <br>
+	<input type=radio Name=question2 value="d" onclick="scoreQuestions(2,this.value)"> Mulan    <br>
+
+
+</form>
+</body>
+</html>
+

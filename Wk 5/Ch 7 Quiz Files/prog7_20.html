@@ -1,0 +1,31 @@
+<html>
+<title> 7.20 </title>
+<script>
+
+var string;
+var str1,str2,str3,str4;
+
+string = window.prompt("Please enter a 5 digit number.");
+
+while (string.length != 5)
+	{
+	string = window.prompt("Error.The number must be 5 digits in length");
+	}
+
+
+str1 = string.slice(0,1);
+str2 = string.slice(1,2);
+str3 = string.slice(-2,-1);
+str4 = string.slice(-1);
+
+if ((str1 == str4) && (str2 == str3))
+	{
+	document.writeln("This is a palindrome");
+	}
+else
+	{
+	document.writeln("This is not a palindrome.");
+	}
+
+</script>
+</html>

@@ -1,0 +1,106 @@
+<html>
+<head>
+<title> Final Quiz </title>
+<script>
+
+var answer = new Array(5);
+var correctAnswer = new Array(5);
+
+correctAnswer[0] = "b";
+correctAnswer[1] = "c";
+correctAnswer[2] = "c";
+correctAnswer[3] = "c";
+correctAnswer[4] = "c";
+
+function recordAnswer(question, ans)
+{
+   answer[question-1]=ans;
+}
+
+function scoreQuiz()
+{
+   var totalcorrect=0;
+   var totalwrong=0;
+   var questionvalue=0;
+   var percent=0;
+   for(var count=0; count<correctAnswer.length; count++)
+   {
+      if(answer[count]==correctAnswer[count])
+         ++totalcorrect;
+      else
+         ++totalwrong;
+   }
+
+   questionvalue=100/correctAnswer.length;
+   percent=100-(questionvalue*totalwrong);
+   alert(" You scored " + totalcorrect + " out of " + correctAnswer.length + " answers correctly");
+   alert(" You answered " + percent + "% of the questions correct!");
+}
+
+</script>
+</head>
+<body>
+
+<h1> Final Cartoon Quiz </h1><p>
+Answer all the questions on the quiz and then select the button to grade the quiz.<p>
+
+<form>
+<b>1. What is the name of Walt Disney's famous mouse? </b><p>
+<input type=radio name=question1 value="a" onclick="recordAnswer(1, this.value)"> Mighty Mouse<BR>
+<input type=radio name=question1 value="b" onclick="recordAnswer(1, this.value)"> Mickey Mouse<BR>
+<input type=radio name=question1 value="c" onclick="recordAnswer(1, this.value)"> Marty Mouse<BR>
+<input type=radio name=question1 value="d" onclick="recordAnswer(1, this.value)"> Melvin Mouse<p>
+
+<b>2. The characer Buzz Lightyear was featured in which animated film?</b><p>
+<input type=radio name=question2 value="a" onclick="recordAnswer(2, this.value)"> Fantasia<BR>
+<input type=radio name=question2 value="b" onclick="recordAnswer(2, this.value)"> Hercules<BR>
+<input type=radio name=question2 value="c" onclick="recordAnswer(2, this.value)"> Toy Story<BR>
+<input type=radio name=question2 value="d" onclick="recordAnswer(2, this.value)"> Mulan<p>
+
+<b>3. The characer Buzz Lightyear was featured in which animated film?</b><p>
+<input type=radio name=question3 value="a" onclick="recordAnswer(3, this.value)"> Fantasia<BR>
+<input type=radio name=question3 value="b" onclick="recordAnswer(3, this.value)"> Hercules<BR>
+<input type=radio name=question3 value="c" onclick="recordAnswer(3, this.value)"> Toy Story<BR>
+<input type=radio name=question3 value="d" onclick="recordAnswer(3, this.value)"> Mulan<p>
+
+<b>4. The characer Buzz Lightyear was featured in which animated film?</b><p>
+<input type=radio name=question4 value="a" onclick="recordAnswer(4, this.value)"> Fantasia<BR>
+<input type=radio name=question4 value="b" onclick="recordAnswer(4, this.value)"> Hercules<BR>
+<input type=radio name=question4 value="c" onclick="recordAnswer(4, this.value)"> Toy Story<BR>
+<input type=radio name=question4 value="d" onclick="recordAnswer(4, this.value)"> Mulan<p>
+
+<b>5. The characer Buzz Lightyear was featured in which animated film?</b><p>
+<input type=radio name=question5 value="a" onclick="recordAnswer(5, this.value)"> Fantasia<BR>
+<input type=radio name=question5 value="b" onclick="recordAnswer(5, this.value)"> Hercules<BR>
+<input type=radio name=question5 value="c" onclick="recordAnswer(5, this.value)"> Toy Story<BR>
+<input type=radio name=question5 value="d" onclick="recordAnswer(5, this.value)"> Mulan<p>
+
+<input type=button Value="Score" onclick="scoreQuiz();"><p>
+</form>
+</body>
+</html>
+
+<!-- Assignment this week is to make this program calculate percentage correct. Add 3 questions also.
+-->
+
+
+
+
+
+
+<!--
+	LECTURE NOTES
+	this :refers to the last object that has been used
+	form: a container for objects
+	p: paragraph
+	b: bold
+	br: break, as in next line
+
+	Each question has the same name (like question1) because it treats all 4 as a single form object.
+		otherwise you could select all 4 answers at the same time.
+
+	Switches can replace:
+	if (variable==value)
+		{******}
+	statements. Neat.
+-->

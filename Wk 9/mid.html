@@ -1,0 +1,36 @@
+<html>
+<script>
+var rows = window.prompt("How many students?");
+var col = window.prompt("How many tests?");
+students = new Array();
+
+function setup()
+{
+	document.writeln("<table border='1'>");
+
+	for (i=0; i<=rows-1; i++)
+		{
+		document.writeln("<tr>");
+
+		students[i] = new Array();
+
+		students[i][0] = window.prompt("Enter the student's name: ");
+
+		document.writeln("<td>"+students[i][0]+"</td>");
+
+
+
+		for (j=1; j<=col; j++)
+			{
+			students[i][j]= window.prompt("Enter the score for test "+j+": ");
+			document.writeln("<td>"+students[i][j]+"</td>");
+			}
+		document.writeln("</tr>");
+		}
+	document.writeln("</table>");
+}
+
+</script>
+<body onload="setup();">
+</body>
+</html>

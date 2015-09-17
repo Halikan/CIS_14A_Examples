@@ -1,0 +1,63 @@
+// 														David Mondragon
+<html>
+<title> Tax Payable Calculator </title>
+<script>
+
+var income;
+var remainder;
+var tax;
+
+remainder=0;
+
+income = window.prompt("Please enter the taxable income amount :");
+income_value=parseInt(income);
+
+
+while (income_value < 1)
+	{
+	income = window.prompt("Error. The value must be greater than $1.");
+	income_value=parseInt(income);
+	}
+
+if (income_value < 4462)
+	{
+	tax=0;
+	}
+	else if (income_value < 17894)
+		{
+		remainder = income_value - 4462;
+		tax = remainder * .3;
+		}
+		else if (income_value < 29500)
+			{
+			remainder = income_value - 17984;
+			tax = 4119 + (remainder * .35);
+			}
+			else if (income_value < 45788)
+				{
+				remainder = income_value - 29500;
+				tax = 8656 + (remainder * .46);
+				}
+				else
+					{
+					remainder = income_value - 45788;
+					tax = 11179 + (remainder * .6);
+					}
+
+
+document.writeln("<h1> The taxable income amount is :" + income    + "</h1>");
+document.writeln("<h1> The remainder             is :" + remainder + "</h1>");
+document.writeln("<h1> The tax payable           is :" + tax       + "</h1>");
+
+</script>
+</html>
+
+// if income = 4000, tax payable is 0.
+// if income = 24000, tax payable is 6224.6
+
+/*
+   There was a discrepancy on the handout.
+   One income level is from 4462-17893.99,
+   but the next one doesn't begin until 17984 instead
+   My program uses 17984, as that number was listed twice.
+*/

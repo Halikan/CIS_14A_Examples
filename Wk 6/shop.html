@@ -1,0 +1,143 @@
+<html>
+<head>
+<title> PS500 </title>
+<script>
+function totalCost()
+{
+	var cpucost		= 0;
+	var hdcost		= 0;
+	var memcost		= 0;
+	var moncost		= 0;
+	var modemcost	= 0;
+	var ecardcost	= 0;
+	var base		= 2300;
+
+	if(document.order.cpu[1].checked)
+		{
+		cpucost=400;
+		}
+
+	if(document.order.hd[1].checked)
+		{
+		hdcost=300;
+		}
+
+	<!-- This is indirect addressing to select an object and then find its value
+		 like choosing a box from a stack and then opening it to find out what's inside.-->
+	var memindex=document.order.mem.selectedIndex;
+	var memcost= eval(document.order.mem.options[memindex].value);
+
+	var monindex=document.order.mon.selectedIndex;
+	var moncost= eval(document.order.mon.options[monindex].value);
+
+	if(document.order.modem.checked)
+		{
+		modemcost=75;
+		}
+
+	if(document.order.ecard.checked)
+		{
+		ecardcost=75;
+		}
+
+	document.order.total.value = base+cpucost+hdcost+memcost+moncost+modemcost+ecardcost;
+	document.alert(total);
+}
+</script>
+</head>
+
+
+
+<body>
+<h3> Configuration Options</h3>
+<form name=order>
+<table cellpacing=4>
+<tr>
+	<td colspan=2 valign=top> Base price = $ 2300 </td>
+</tr>
+
+<tr>
+	<td valign=top>1) process speed: </td>
+	<td valign=top>
+		<input type=radio name = cpu checked> 500 Mhz <br>
+		<input type=radio name = cpu		> 650 Mhz (add $ 400) </td>
+</tr>
+
+<tr>
+	<td valign=top>2)	Hard Drive: </td>
+	<td valign=top>
+		<input type=radio name = hd  checked> 16 GB <br>
+		<input type=radio name = hd			> 32 GB (add $ 300) </td>
+</tr>
+
+<tr>
+	<td valign=top>3) Memory : </td>
+	<td valign=top>
+		<select name=mem>
+		<option	value=-50> 32  MB (subtract $ 50)
+		<option	value=0	>  64  MB
+		<option	value=100> 96  MB (add $ 100)
+		<option	value=150> 128 MB (add $ 150)
+		</select>
+	</td>
+</tr>
+
+<tr>
+	<td valign=top>4) Monitor : </td>
+	<td valign=top>
+		<select name=mon>
+		<option	value=0		> 	15 inch
+		<option	value=300	>	17 inch (add $300)
+		<option	value=400	> 	96 MB (add $ 400
+		<option	value=300	> 	128 MB (add $ 300)
+		</select>
+	</td>
+</tr>
+
+<tr>
+	<td valign=top>5) 56k modem : </td>
+	<td valign=top>
+	<input type=checkbox name=modem> (add $75) </td>
+</tr>
+
+
+<tr>
+	<td valign=top>6) 10 Base T/T0 Ethernet card : </td>
+	<td valign=top>
+	<input type=checkbox name=ecard> (add $75) </td>
+</tr>
+
+<tr>
+	<td colspan=2 valign=top>
+	<input type=button value="calculate Total "
+	onClick="totalCost();"> &nbsp;&nbsp;&nbsp;
+	<input type=button value="reload" onclick="location.href;">
+	</td>
+</tr>
+
+<tr>
+	<td valign=top colspan=2 align=right>
+Total
+$ <input name=total size=4>
+	</td>
+</tr>
+
+</table>
+</form>
+</body>
+
+</html>
+
+<!-- the first thing to do with ANY program is go create a design and develop some form of organization for the code.
+
+objects I need for this project
+1)form
+2)table (line 70 is radio/option box)
+3)drop box(es) (line 82, to select items)
+4)check box
+5)button (to execute the program)
+
+
+<td> == table data (horizontal cells)
+<tr> == table row
+-->

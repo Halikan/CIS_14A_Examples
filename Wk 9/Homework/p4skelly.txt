@@ -1,0 +1,32 @@
+pseudocode for problem #4, creating business website on a single page
+
+<html>
+<title> TITLE </title>
+<script>
+
+array for items
+array for prices
+
+function to create table
+	columns determined by merch length
+	rows for Item, Price, Quantity, Add to Cart button, Amount in Cart
+function to fill table
+	cells for items and cells filled by for loop using index of arrays
+	cells for add to cart refer to function
+function to add to cart
+	include update to total in cart
+	include innerHTML to update Total
+
+</script>
+
+<body>
+formatting of colors/font
+welcome to shop greeting in marquee
+
+table generated on load already containing everything
+
+button to checkout(but actually just resets the page with alert)
+
+</body>
+
+</html>

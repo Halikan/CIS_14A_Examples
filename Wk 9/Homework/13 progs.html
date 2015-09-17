@@ -1,0 +1,26 @@
+<html>
+<body>
+<p id="demo">Click the button to join the 3 arrays.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+
+function myFunction()
+	{
+	var fruit = ["Banana","Orange","Apple","Mango"];
+	fruit.unshift("Lemon","Pineapple");
+	var x=document.getElementById("demo");
+	x.innerHTML=fruit;
+	}
+
+</script>
+
+</body>
+</html>
+
+<!--
+
+"Banana","Orange","Apple","Mango"
+
+40,100,1,5,25,10-->

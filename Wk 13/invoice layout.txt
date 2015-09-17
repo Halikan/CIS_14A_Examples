@@ -1,0 +1,11 @@
+data		company name
+
+confirmation number
+customer number		items			diagram(picture of items)
+customer name		quantity
+address			item price
+city			subtotal
+state			sales_tax
+country			shipping + handling
+email			total
+phone

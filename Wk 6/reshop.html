@@ -1,0 +1,109 @@
+<html>
+<head>
+<title> PS500 </title>
+
+
+
+
+
+
+<script>
+
+
+function TotalCost()
+{
+	var CPUCost=0;
+	var HDCost=0;
+	var MEMCost=0;
+	var MONCost=0;
+	var MODEMCost=0;
+	var ECARDCost=0;
+	var BASE=2300;
+
+	if(document.ORDER.CPU[1].checked)
+		{CPUCost=400;}
+	if document.ORDER.HD[1].checked)
+		{HDCost=300;}
+
+	var MEMIndex=document.ORDER.MEM.selectedIndex;
+	var MEMCost=eval(document.ORDER.MEM.options[MEMIndex].value);
+
+	var MONIndex=document.ORDER.MON.selectedIndex;
+	var MONCost=eval(document.ORDER.MON.options[MONIndex].value);
+
+	if(document.ORDER.MODEM.checked)
+		{MODEMCost=75;}
+	if(document.ORDER.ECARD.checked)
+		{ECARDCost=75;}
+
+	document.ORDER.TOTAL.value=BASE+CPUCost+HDCost+MEMCost+MONCost+MODEMCost+ECARDCost;
+}
+
+</script>
+</head>
+
+<h3>Configuration Options</h3>
+
+<Form name=ORDER>
+<table cellspacing=4>
+<tr>
+	<td colspan=2 valign=top>Base Price = $2300</td>
+</tr>
+<tr>
+	<td valign=top>1)Processor Speed:</td>
+	<td valign=top>
+		<input type=radio name=CPU checked> 500 MHz<br>
+		<input type=radio name=CPU 		  > 650 MHz (add $400)</td>
+</tr>
+<tr>
+	<td valign=top>2) Hard Drive:</td>
+	<td valign=top>
+		<input type=radio name=HD checked> 12 GB<br>
+		<input type=radio name=HD	 > 21 GB (add $300)</td>
+</tr>
+<tr>
+	<td valign=top>3) Memory:</td>
+	<td valign=top>
+		<select name=MEM>
+			<option	value=-50> 32  MB (subtract $ 50)
+			<option	value=0	>  64  MB
+			<option	value=100> 96  MB (add $ 100)
+			<option	value=150> 128 MB (add $ 150)
+		</select></td>
+</tr>
+<tr>
+	<td valign=top>4) Monitor : </td>
+	<td valign=top>
+		<select name=MON>
+		<option	value=0		> 	15 inch
+		<option	value=300	>	17 inch (add $300)
+		<option	value=400	> 	96 MB (add $ 400
+		<option	value=300	> 	128 MB (add $ 300)
+		</select></td>
+</tr>
+<tr>
+	<td valign=top>5) 56k modem : </td>
+	<td valign=top>
+	<input type=checkbox name=MODEM> (add $75) </td>
+</tr>
+<tr>
+	<td valign=top>6) 10 Base T/T0 Ethernet card : </td>
+	<td valign=top>
+	<input type=checkbox name=ECARD> (add $75) </td>
+</tr>
+<tr>
+	<td colspan=2 valign=top>
+		<input type=button value="Calculate Total"
+		onClick="totalCost();">&nbsp; &nbsp; &nbsp;
+		<input type=button value="Reload" onClick="location=location.href;">
+	</td>
+</tr>
+<tr>
+	<td valign=stop colspan=2 align=right>
+	<input name=TOTAL size=4>
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

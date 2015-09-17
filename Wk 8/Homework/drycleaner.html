@@ -1,0 +1,380 @@
+<html>
+<head>
+<script language="JavaScript">
+
+function processShirts()
+	{
+	var unitPrice =
+	parseFloat(document.frmCleaningOrder.txtShirtUnitPrice.value);
+	var quantity =
+	parseInt(document.frmCleaningOrder.txtShirtQuantity.value);
+	var subTotal = unitPrice * quantity;
+
+	document.frmCleaningOrder.txtShirtSubtotal.value =
+	subTotal.toFixed(2);
+	}
+function processPants()
+	{
+	var unitPrice =
+	parseFloat(document.frmCleaningOrder.txtPantsUnitPrice.value);
+	var quantity =
+	parseInt(document.frmCleaningOrder.txtPantsQuantity.value);
+	var subTotal = unitPrice * quantity;
+
+	document.frmCleaningOrder.txtPantsSubtotal.value =
+	subTotal.toFixed(2);
+	}
+function processItem1()
+	{
+	var unitPrice =
+	parseFloat(document.frmCleaningOrder.txtItem1UnitPrice.value);
+	var quantity =
+	parseInt(document.frmCleaningOrder.txtItem1Quantity.value);
+	var subTotal = unitPrice * quantity;
+
+	document.frmCleaningOrder.txtItem1SubTotal.value =
+	subTotal.toFixed(2);
+	}
+function processItem2()
+	{
+	var unitPrice =
+	parseFloat(document.frmCleaningOrder.txtItem2UnitPrice.value);
+	var quantity =
+	parseInt(document.frmCleaningOrder.txtItem2Quantity.value);
+	var subTotal = unitPrice * quantity;
+
+	document.frmCleaningOrder.txtItem2SubTotal.value =
+	subTotal.toFixed(2);
+	}
+function processItem3()
+	{
+	var unitPrice =
+	parseFloat(document.frmCleaningOrder.txtItem3UnitPrice.value);
+	var quantity =
+	parseInt(document.frmCleaningOrder.txtItem3Quantity.value);
+	var subTotal = unitPrice * quantity;
+
+	document.frmCleaningOrder.txtItem3SubTotal.value =
+	subTotal.toFixed(2);
+	}
+function processItem4()
+	{
+	var unitPrice =
+	parseFloat(document.frmCleaningOrder.txtItem4UnitPrice.value);
+	var quantity =
+	parseInt(document.frmCleaningOrder.txtItem4Quantity.value);
+	var subTotal = unitPrice * quantity;
+
+	document.frmCleaningOrder.txtItem4SubTotal.value =
+	subTotal.toFixed(2);
+	}
+function calculateTaxAmount(price, tax)
+	{
+	var amount = price * tax/100;
+	return amount;
+	}
+function processOrder()
+	{
+	var shirtsTotal, pantsTotal, item1Total,
+		item2Total, item3Total, item4Total;
+
+	var shirtsTotal=
+	parseFloat(document.frmCleaningOrder.txtShirtSubtotal.value);
+	var pantsTotal =
+	parseFloat(document.frmCleaningOrder.txtPantsSubtotal.value);
+	var item1Total =
+	parseFloat(document.frmCleaningOrder.txtItem1SubTotal.value);
+	var item2Total =
+	parseFloat(document.frmCleaningOrder.txtItem2SubTotal.value);
+	var item3Total =
+	parseFloat(document.frmCleaningOrder.txtItem3SubTotal.value);
+	var item4Total =
+	parseFloat(document.frmCleaningOrder.txtItem4SubTotal.value);
+
+	var cleaningTotal = shirtsTotal + pantsTotal + item1Total +
+						item2Total + item3Total + item4Total;
+	var taxRate = parseFloat(document.frmCleaningOrder.txtTaxRate.value);
+	var taxAmount = calculateTaxAmount(cleaningTotal, taxRate);
+	var orderTotal = cleaningTotal + taxAmount;
+
+	document.frmCleaningOrder.txtCleaningTotal.value = 	cleaningTotal.toFixed(2);
+	document.frmCleaningOrder.txtTaxAmount.value = 		taxAmount.toFixed(2);
+	document.frmCleaningOrder.txtOrderTotal.value = 	orderTotal.toFixed(2);
+	}
+
+
+</script>
+<title> MV College Cleaning INC </title>
+</head>
+<body bgcolor="INCREDIBLE">
+<center>
+<font size="4" color="AMAZING">
+MV College Cleaning Service </font>
+</center>
+<hr size="7" color="SURPRISE">
+<form name="frmCleaningOrder">
+<table border="0" width="540">
+	<tr>
+		<td width="446" colspan="4">
+			<h3> Order Identification </h3>
+		</td>
+	</tr>
+	<tr>
+		<td width="106"> Customer Name:</td>
+		<td width="150">
+			<input type="text" Name="txtCustomerName" size="20">
+		</td>
+		<td width="108"> Customer Phone: </td>
+		<td width="150">
+			<input type="text" Name="txtCustomerPhone" maxlength="10" size="20">
+		</td>
+	</tr>
+	<tr>
+		<td width="106"> Date Left: </td>
+		<td width="150">
+			<input type="text" Name="txtDateLeft" size="20">
+		</td>
+		<td width="106"> Time Left: </td>
+		<td width="150">
+			<input type="text" Name="txtTimeLeft" size="20">
+		</td>
+	</tr>
+	<tr>
+		<td width="106"> Date Expected: </td>
+		<td width="150">
+			<input type="text" Name="txtDateExpected" size="20">
+		</td>
+		<td width="106"> Time Expected: </td>
+		<td width="150">
+			<input type="text" Name="txtTimeExpected" size="20">
+		</td>
+	</tr>
+</table>
+<hr size="5" color="KIDDING">
+<table border="0" width="596">
+<tr>
+	<td width="381">
+		<table border="0" width="381">
+		<tr>
+			<td width="128"><b> Item Type  </b></td>
+			<td width="71" ><b> Unit Price </b></td>
+			<td width="38" ><b> Quantity   </b></td>
+			<td width="46" ><b></td>
+			<td width="66" ><b> Sub-Total  </b></td>
+		</tr>
+		<tr>
+			<td width="128"> Shirts </td>
+			<td width="71">
+				<input type="text" name="txtShirtUnitPrice" size="7" value=".95">
+			</td>
+			<td width="38">
+				<input type="text" name="txtShirtQuantity" size="4" value="0">
+			</td>
+			<td width="46">
+				<input type="button" value="Calc" name="btnShirts" onclick="processShirts()">
+			</td>
+			<td width="66">
+				<input type="text" name="txtShirtSubtotal" size="8" value="0.00">
+			</td>
+		</tr>
+		<tr>
+			<td width="128"> Pants </td>
+			<td width="71">
+				<input type="text" name="txtPantsUnitPrice"
+					size="7" value="2.75">
+			</td>
+			<td width="38">
+				<input type="text" name="txtPantsQuantity"
+					size="4" value="0">
+			</td>
+			<td width="46">
+				<input type="button" value="Calc" name="btnPants"
+					onclick="processPants()">
+			</td>
+			<td width="66">
+				<input type="text" name="txtPantsSubtotal"
+					size="8" value="0.00">
+			</td>
+		</tr>
+		<tr>
+			<td width="128">
+			<select size="1" name="cboItem1">
+				<option selected> None 		 	  </option>
+				<option			> Women Suit 	  </option>
+				<option			> Dress		 	  </option>
+				<option			> Regular Skirt	  </option>
+				<option			> Skirt with Hook </option>
+				<option			> Men's Suit 2Pc  </option>
+				<option			> Men's Suit 3Pc  </option>
+				<option			> Sweaters		  </option>
+				<option			> Silk Shirt	  </option>
+				<option			> Tie			  </option>
+				<option			> Coat			  </option>
+				<option			> Jacket		  </option>
+				<option			> Swede			  </option>
+			</select>
+			</td>
+			<td width="71">
+				<input type="text" name="txtItem1UnitPrice"
+					size="7" value="0.00"></td>
+			<td width="38">
+				<input type="text" name="txtItem1Quantity"
+					size="4" value="0"></td>
+			<td width="46">
+				<input type="button" value="Calc" name="btnItem1"
+					onclick="processItem1()"></td>
+			<td width="66">
+				<input type="text" name="txtItem1SubTotal"
+					size="8" value="0.00"></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<select size="1" name="cboItem2">
+				<option selected> None 		 	  </option>
+				<option			> Women Suit 	  </option>
+				<option			> Dress		 	  </option>
+				<option			> Regular Skirt	  </option>
+				<option			> Skirt with Hook </option>
+				<option			> Men's Suit 2Pc  </option>
+				<option			> Men's Suit 3Pc  </option>
+				<option			> Sweaters		  </option>
+				<option			> Silk Shirt	  </option>
+				<option			> Tie			  </option>
+				<option			> Coat			  </option>
+				<option			> Jacket		  </option>
+				<option			> Swede			  </option>
+			</select>
+			</td>
+			<td width="71">
+				<input type="text" name="txtItem2UnitPrice"
+					size="7" value="0.00"></td>
+			<td width="38">
+				<input type="text" name="txtItem2Quantity"
+					size="4" value="0"></td>
+			<td width="46">
+				<input type="button" value="Calc" name="btnItem2"
+					onclick="processItem2()"></td>
+			<td width="66">
+				<input type="text" name="txtItem2SubTotal"
+					size="8" value="0.00"></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<select size="1" name="cboItem3">
+				<option selected> None 		 	  </option>
+				<option			> Women Suit 	  </option>
+				<option			> Dress		 	  </option>
+				<option			> Regular Skirt	  </option>
+				<option			> Skirt with Hook </option>
+				<option			> Men's Suit 2Pc  </option>
+				<option			> Men's Suit 3Pc  </option>
+				<option			> Sweaters		  </option>
+				<option			> Silk Shirt	  </option>
+				<option			> Tie			  </option>
+				<option			> Coat			  </option>
+				<option			> Jacket		  </option>
+				<option			> Swede			  </option>
+			</select>
+			</td>
+			<td width="71">
+				<input type="text" name="txtItem3UnitPrice"
+					size="7" value="0.00"></td>
+			<td width="38">
+				<input type="text" name="txtItem3Quantity"
+					size="4" value="0"></td>
+			<td width="46">
+				<input type="button" value="Calc" name="btnItem3"
+					onclick="processItem3()"></td>
+			<td width="66">
+				<input type="text" name="txtItem3SubTotal"
+					size="8" value="0.00"></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<select size="1" name="cboItem4">
+				<option selected> None 		 	  </option>
+				<option			> Women Suit 	  </option>
+				<option			> Dress		 	  </option>
+				<option			> Regular Skirt	  </option>
+				<option			> Skirt with Hook </option>
+				<option			> Men's Suit 2Pc  </option>
+				<option			> Men's Suit 3Pc  </option>
+				<option			> Sweaters		  </option>
+				<option			> Silk Shirt	  </option>
+				<option			> Tie			  </option>
+				<option			> Coat			  </option>
+				<option			> Jacket		  </option>
+				<option			> Swede			  </option>
+			</select>
+			</td>
+			<td width="71">
+				<input type="text" name="txtItem4UnitPrice"
+					size="7" value="0.00"></td>
+			<td width="38">
+				<input type="text" name="txtItem4Quantity"
+					size="4" value="0"></td>
+			<td width="46">
+				<input type="button" value="Calc" name="btnItem4"
+					onclick="processItem4()"></td>
+			<td width="66">
+				<input type="text" name="txtItem4SubTotal"
+					size="8" value="0.00"></td>
+		</tr>
+</table>
+</td>
+<td width="201">
+	<table border="1" width="100%">
+	<tr>
+		<td width="100%" align="center" colspan="2">
+			<input type="button" value="Calculate Order" name="btnCalculate"
+				onclick="processOrder()"></td>
+	</tr>
+	<tr>
+		<td width="50%"> Cleaning Total: </td>
+		<td width="50%">
+			<input type="text" name="txtCleaningTotal"
+				size="8" value="0.00"></td>
+	</tr>
+	<tr>
+		<td width="50%"> Tax Rate: </td>
+		<td width="50%">
+			<input type="text" name="txtTaxRate"
+				size="5" value="5.75">%</td>
+	</tr>
+	<tr>
+		<td width="50%"> Tax Amount: </td>
+		<td width="50%">
+			<input type="text" name="txtTaxAmount"
+				size="8" value="0.00"></td>
+	</tr>
+	<tr>
+		<td width="50%"> Order Total: </td>
+		<td width="50%">
+			<input type="text" name="txtOrderTotal"
+				size="8" value="0.00"></td>
+	</tr>
+
+	</table>
+</td>
+
+</tr>
+</table>
+
+<hr size="5" color="surprises">
+
+<p>
+	<input type="reset" value="Start New Cleaning Order" name="btnNewOrder">
+</p>
+
+</form>
+</body>
+</html>
+
+
+
+<!-- Let's say you were to create a program for a dry cleaner's.
+They would sort info in an array like first and last name, phone number, date of
+drop off and pick, and the time.
+
+Then they need the quantity and price of the items calculated into a subtotal.
+Then tax is added, and that is the final price.-->

@@ -1,0 +1,69 @@
+<html>
+<head>
+<title> Login page </title>
+<script>
+
+function pasuser(form)
+{
+	if(form.id.value=="Cult")
+	{
+		if(form.pass.value=="Cthulhu")
+		{
+			location="welcome.html";
+		}
+		else
+		{
+		alert("invalid password:");
+		}
+	}
+	else
+		{
+		alert("invalid user name:");
+		}
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+<center>
+<table bgcolor="royal blue" cellpadding="12" border="5">
+
+<tr>
+<td clspan="2">
+<center><h1><i><b>Login Area </b></i></h1></center>
+</td>
+</tr>
+
+<tr>
+	<td> <h1><i><b> User ID : </b></i></h1> </td>
+
+	<td><form name="login">
+		<input name="id" type="text"> </td>
+</tr>
+
+<tr>
+	<td> <h1><i><b> Password : </b></i></h1> </td>
+	<td> <input name="pass" type="password"> </td>
+</tr>
+
+<tr>
+	<td> <center>
+		<input type="button" value="Login" onclick="pasuser(this.form)">
+		</center> </td>
+	<td> <center>
+		<input type="reset"> </td>
+</tr>
+
+</form>
+</body>
+</html>

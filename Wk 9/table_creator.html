@@ -1,0 +1,27 @@
+<html>
+<script>
+var rows = window.prompt("How many rows?");
+var col = window.prompt("How many columns?");
+var count = 0;
+
+function setup()
+{
+	document.writeln("<table border='1'>");
+
+	for (i=0; i<=rows-1; i++)
+		{
+		document.writeln("<tr>");
+
+		for (j=0; j<=col-1; j++)
+			{
+			document.writeln("<td>"+count+"</td>");
+			count++;
+			}
+		document.writeln("</tr>");
+		}
+	document.writeln("</table>");
+}
+</script>
+<body onload="setup();">
+</body>
+</html>

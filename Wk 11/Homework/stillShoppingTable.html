@@ -1,0 +1,172 @@
+<html>
+<script type="text/javascript">
+var merch=[
+	"Notebook",
+	"Pen",
+	"Mechanical Pencil",
+	"Lead Refill Pack",
+	"Laptop Case",
+	"Cell Phone Case",
+	"3 Ring Binder",
+	"3-Hole Paper Refill"];
+var prices=[
+	"5.95",
+	"4.95",
+	"2.95",
+	"0.98",
+	"29.99",
+	"18.99",
+	"6.95",
+	"2.00"];
+
+var col = 4;
+var rows = merch.length;
+var count = 0;
+var total = 0;
+
+var inCart=new Array(rows);
+
+function tableSetup()
+	{
+	for (i=0; i<=rows-1; i++)
+		{
+		inCart[i]=0;
+		document.writeln("<tr>");
+
+		for (j=0; j<=col-1; j++)
+			{
+			var cellid =("cell"+count);
+			document.writeln("<td id="+cellid+">"+count+"</td>");
+			count++;
+			}
+		document.writeln("</tr>");
+		}
+	document.writeln("</table>");
+
+	}
+
+function change()
+	{
+	count=0;
+	for (i=0; i<=rows-1; i++)
+		{
+		for (j=0; j<=col-1; j++)
+			{
+			var cellid =("cell"+count);
+
+
+			if (count%4==0)
+				{
+					document.getElementById(cellid).innerHTML=merch[i];
+				}
+			else if (count%4==1)
+				{
+				document.getElementById(cellid).innerHTML=prices[i];
+				}
+			else if (count%4==2)
+				{
+				var itemname=("Q"+i);
+				var btnname=("btnAdd"+i);
+
+				var qty=("<input type='number' name="+itemname+"  step='1' value='0'>");
+
+				var btn=("<input type='button' value='Update' name="+btnname+
+							"onclick='addToCart("+i+","+("document.frmOrder.Q"+i+".value")+")'"+
+							">");
+				var quantity=qty+btn;
+				document.getElementById(cellid).innerHTML=quantity;
+				}
+			else if (count%4==3)
+				{
+				cartname=("txtCart"+i);
+				cartquantity=("<input type='text' name="+cartname+" size='1' value='0'>");
+
+				subtotalname=("txtSub"+i);
+				subtotal=("<input type='text' name="+subtotalname+" size='1' value='0'>");
+
+				cart=("In Cart:"+cartquantity+"Subtotal:"+subtotal);
+				document.getElementById(cellid).innerHTML=cart;
+				}
+
+			count++;
+			}
+		}
+	}
+function addToCart(item,quantity)
+	{
+	var amt= parseInt(quantity);
+
+	alert(inCart);
+	alert(item);
+	alert(amt);
+	inCart[item]+=amt;
+
+	var cart=("txtCart"+item);
+
+	//(("document.frmOrder."+cart+".value")=amt);
+	//What do I do from here? >.<
+
+	alert(inCart);
+
+	for(i in inCart)
+		{
+		var q = inCart[i];
+		var cost = prices[i];
+		total += (q*cost);
+		}
+	alert("Your current total is:"+total);
+
+	}
+</script>
+<body>
+
+<form name='frmOrder'>
+<table border='1'>
+	<tr>
+	<td width='150'>Item</td>
+	<td width='50'>Price</td>
+	<td width='150'>Quantity</td>
+	<td width='200'>Total:
+					<input type="text" name="txtTotal"
+					size="8" value="0.00"></td>
+	</tr>
+<script>
+tableSetup();
+change();
+</script>
+</form>
+
+<h1> Your Total is: </h1>
+<input type='text' id='total' name='total' size='10' value='0'>
+
+</body>
+</html>
+
+<!--
+
+It's going well. Kind of.
+All that's left:
+
+Make Add Button relative to index at creation
+	Add function now properly obtains item index and quantity. Psychedness.
+	Now must make addToCart function edit values for incart somehow.
+	actual index is changed perfectly, must edit the textbox value somehow.
+	need to figure out how to concatenate properly to access that value.
+	Again with this. >.>
+
+inCart values must maintain properly.
+	Right now, an array of proper length is created on start, and the update/add to cart button
+	now changes the proper index's value from 0 to the desired amount.
+	May switch this to a different function to also calculate price.
+
+update subttoal and Total function added to each button
+	Perhaps they'll call a total function hardcoded into
+	the end of add to cart
+
+add remove button if there is time
+	pretty much references the add function, but with a negative
+	number. Must check for values below 0.
+
+
+
+-->

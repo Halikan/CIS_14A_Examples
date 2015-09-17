@@ -1,0 +1,92 @@
+<html>
+<head>
+<Title> Final version of the cartoon Quiz </Title>
+<Script language="JavaScript1.2">
+
+var answer = new Array(5);
+var correctAnswer = new Array(5);
+
+correctAnswer[0] = "b";
+correctAnswer[1] = "c";
+correctAnswer[2] = "d";
+correctAnswer[3] = "c";
+correctAnswer[4] = "a";
+
+function recordAnswer(question, ans)
+{
+   answer[question-1]=ans;
+}
+
+function scoreQuiz()
+{
+   var totalcorrect=0;
+   for(var count=0; count<5; count++)
+   {
+      if(answer[count]==correctAnswer[count])
+         ++totalcorrect;
+   }
+   alert(" You scored " + totalcorrect + " out of 5 answers correctly");
+}
+
+</script>
+</head>
+<body>
+
+<h1> Cartoon Quiz Final Version </h1><p>
+Answer all the questions on the quiz and then select the button to grade the quiz.<p>
+
+<form>
+<b>1. What is the name of Walt Disney's famous mouse? </b><p>
+<input type=radio name=question1 value="a"
+onclick="recordAnswer(1, this.value)">Mighty Mouse<BR>
+<input type=radio name=question1 value="b"
+onclick="recordAnswer(1, this.value)">Mickey Mouse<BR>
+<input type=radio name=question1 value="c"
+onclick="recordAnswer(1, this.value)">Marty Mouse<BR>
+<input type=radio name=question1 value="d"
+onclick="recordAnswer(1, this.value)">Melvin Mouse<p>
+
+<b>2. The characer Buzz Lightyear was featured in which animated film?</b><p>
+<input type=radio name=question2 value="a"
+onclick="recordAnswer(2, this.value)">Fantasia<BR>
+<input type=radio name=question2 value="b"
+onclick="recordAnswer(2, this.value)">Hercules<BR>
+<input type=radio name=question2 value="c"
+onclick="recordAnswer(2, this.value)">Toy Story<BR>
+<input type=radio name=question2 value="d"
+onclick="recordAnswer(2, this.value)">Mulan<p>
+
+<b>3.  Pluto is a dog.  What is Goofey?</b><p>
+<input type=radio name=question3 value="a"
+onclick="recordAnswer(3, this.value)">A bear<BR>
+<input type=radio name=question3 value="b"
+onclick="recordAnswer(3, this.value)">A mule<BR>
+<input type=radio name=question3 value="c"
+onclick="recordAnswer(3, this.value)">A horse<BR>
+<input type=radio name=question3 value="d"
+onclick="recordAnswer(3, this.value)">Also a dog<p>
+
+<b>4. Who was always trying to eat Tweety Bird?</b><p>
+<input type=radio name=question4 value="a"
+onclick="recordAnswer(4, this.value)">Porky Pig<BR>
+<input type=radio name=question4 value="b"
+onclick="recordAnswer(4, this.value)">Yosemite Sam<BR>
+<input type=radio name=question4 value="c"
+onclick="recordAnswer(4, this.value)">Sylvester<BR>
+<input type=radio name=question4 value="d"
+onclick="recordAnswer(4, this.value)">Foghorn Leghorn<p>
+
+<b>5.  What is Winnie the Pooh's favorite food?</b><p>
+<input type=radio name=question5 value="a"
+onclick="recordAnswer(5, this.value)">Honey<BR>
+<input type=radio name=question5 value="b"
+onclick="recordAnswer(5, this.value)">Molasses<BR>
+<input type=radio name=question5 value="c"
+onclick="recordAnswer(5, this.value)">Peanut Butter<BR>
+<input type=radio name=question5 value="d"
+onclick="recordAnswer(5, this.value)">Yogurt<p>
+
+<input type=button Value="Score" onclick="scoreQuiz();"><P>
+</form>
+</body>
+</html>

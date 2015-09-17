@@ -1,0 +1,24 @@
+<html>
+<title> 7.16 </title>
+<script>
+
+var myTable= "<table border=1><tr><td>N</td>";
+myTable +="<td>10*N</td>";
+myTable +="<td>100*N</td>";
+myTable +="<td>1000*N</td>";
+
+for (var i=1; i<7; i++)
+{
+myTable += "<tr><td>"+i+"</td>";
+myTable += "<td align=center>"+i*10+"</td>";
+myTable += "<td align=center>"+i*100+"</td>";
+myTable += "<td align=center>"+i*1000+"</td>";
+}
+
+myTable += "</table>";
+
+document.write(myTable);
+
+
+</script>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<title> A Simple Page </title>
+<script>
+function calcArea()
+{
+	inpRadius = 3;
+	document.write(Math.PI * ((inpRadius)*(inpRadius)));
+}
+
+function calcPeri()
+{
+	inpRadius = 3;
+	document.write(2 * Math.PI * (inpRadius));
+}
+
+function calcVol()
+{
+	inpRadius = 3;
+	document.write(Math.PI * ((inpRadius) * (inpRadius) * (inpRadius)) * (4/3));
+}
+
+
+
+</script>
+</head>
+<p>
+	Click<input type="button" value="HERE" onclick="calcArea();"> to calculate circle area!</p>
+<p>
+	Click<input type="button" value="HERE" onclick="calcPeri();"> to calculate circle perimeter!</p>
+<p>
+	Click<input type="button" value="HERE" onclick="calcVol();"> to calculate circle volume!</p>
+
+</html>

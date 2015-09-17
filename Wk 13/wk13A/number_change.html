@@ -1,0 +1,32 @@
+<html>
+  <head>
+      <script>
+         var digit1;
+         var digit2;
+         var digit3;
+         var digit4;
+         var myinput;
+
+ myinput=window.prompt("Enter a four digit number for data:");
+   var mynumber=parseInt(myinput);
+      digit1=parseInt((mynumber / 1000            +7) %10);
+        digit2=parseInt((mynumber % 1000 / 100      +7) %10);
+        digit3=parseInt((mynumber % 1000 % 100 /10  +7) %10);
+        digit4=parseInt((mynumber % 1000 % 100 % 10 +7) %10);
+         var myencrypted;
+         var reverse;
+         myencrypted="The encrypted number is"+ digit1+digit2+digit3+digit4;
+
+         reverse="The encrypted number is"+ digit4+digit3+digit2+digit1;
+
+
+   document.writeln("<p>" + myencrypted + "</p>");
+    document.writeln("<p>" + reverse + "</p>");
+
+
+
+
+
+   </script>
+   </head>
+   </html>

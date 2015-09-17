@@ -1,0 +1,31 @@
+<html>
+<title>7.12</title>
+<script>
+var account;
+var beginning_balance;
+var credit_charged;
+var credit_earned;
+var limit;
+
+account           = window.prompt("Please enter the account number.");
+beginning_balance = window.prompt("Please enter the balance at the beginning of the month.");
+credit_charged    = window.prompt("Please enter the credit charged so far this month.");
+credit_earned     = window.prompt("Please enter the credit applied this month.");
+limit             = window.prompt("Please enter the credit limit.");
+
+beginning_balance_value = parseInt(beginning_balance);
+credit_charged_value    = parseInt(credit_charged);
+credit_earned_value     = parseInt(credit_earned);
+
+new_balance = (beginning_balance_value + credit_charged_value - credit_earned_value);
+
+document.writeln("The new balance is :" + new_balance + "<br>");
+
+if (new_balance > limit)
+{
+	document.writeln("Credit limit exceeded.");
+}
+
+</script>
+
+</html>

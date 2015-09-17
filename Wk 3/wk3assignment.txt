@@ -1,0 +1,33 @@
+David Mondragon
+
+CIS 14A
+Week 3 Assignment	p.146-147, problems 1-26
+
+1. value		16. 38, 50, 32
+2. var			17.
+3. dynamic		    a) (N<0)
+4. concatenation	    b) (N<0) && (N>5)
+5. conditional		18. a) X>5
+6. False		    b) X>=1
+7. True			19.
+8. True			    a)no error, but using extra capital letter may
+9. False		      cause spelling errors
+10. False		    b)variable cannot begin with a number
+11.			    c)contains the word "window"
+    a)True		    d)no error, but too long to be practical
+    b)False		    e)variable name cannot contain punctuation
+12.			    f)no error
+    a)False		20. var greeting = 'Mandy said, "Good morning!"';
+    b)False		21.
+    c)True		    a)3
+    d)True		    b)2
+13. 			    c)0
+    a)True		    d)1
+    b)False		22.
+    c)False		    a)var playAgain = false;
+    d)False		    b)var answer = 8;
+14. False		    c)var tax = .08;
+15. True		23. answer is 5
+			24. Batman and Robin
+			25. Your ID is: Amanda1234
+			26. Your ID is: 53

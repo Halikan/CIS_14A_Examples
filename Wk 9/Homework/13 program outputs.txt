@@ -1,0 +1,15 @@
+Array Program Outputs
+
+1.	100,40,25,10,5,1
+2.	Cecilie,Lone,Emil,Tobias,Linus,Robin
+3.	Banana,Orange,Apple,Mango
+4.	Banana,Orange,Apple,Mango,Kiwi
+5.	Mango,Apple,Orange,Banana
+6.	Orange,Apple,Mango
+7.	Orange,Lemon
+8.	Apple,Banana,Mango,Orange
+9.	1,5,10,25,40,100
+10.	100,40,25,10,5,1
+11.	Banana,Orange,Lemon,Kiwi,Apple,Mango
+12.	Banana,Orange,Apple,Mango
+13.	Lemon,Pineapple,Banana,Orange,Apple,Mango

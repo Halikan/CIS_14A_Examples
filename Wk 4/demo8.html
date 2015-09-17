@@ -1,0 +1,26 @@
+<!--#21 in Week 4 handout,creates page that asks for 3 numbers
+	and adds them together, converting text to numbers -->
+<html>
+<head>
+<title> Add three numbers </title>
+<script>
+function addThreeNums(inOne,inTwo,inThree)
+{
+	var inOne   = Number(inOne);
+	var inTwo   = Number(inTwo);
+	var inThree = Number(inThree);
+	return Number(inOne + inTwo + inThree);
+}
+</script>
+</head>
+<body>
+<form Name="theForm">
+<input type=text name="num1">
+<input type=text name="num2">
+<input type=text name="num3">
+<input type="button" value="Add Them" onClick='document.write("sum: "
+	+addThreeNums(theForm.num1.value,theForm.num2.value,theForm.num3.value));'>
+
+</form>
+</body>
+</html>

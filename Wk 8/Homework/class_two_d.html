@@ -1,0 +1,40 @@
+<html>
+
+<script>
+var students=new Array();
+var studentamount;
+
+studentamount = window.prompt("How many students are in the class: ");
+studentamount = parseInt(studentamount);
+
+tests = window.prompt("How many tests were there?");
+
+var i = 0;
+for (i=0; i<= studentamount-1; i++)
+	{
+	students[i]= window.prompt("Enter the student's name: ");
+	document.writeln("<tr><td> students[i]</td>");
+
+	for (j=0; j<=tests-1; j++)
+	 	{
+	 	students[i][j] = window.prompt("What was their score for test " + (j+1) + "?");
+		document.writeln("<td> students[1] </td>");
+	 	}
+	document.writeln("</tr></table>");
+	}
+
+
+
+</script>
+<body onload="setup()">
+<br><br><br>
+<form name="data">
+<table id = "scoretable"
+	border = "1" width = "800">
+<tr>
+	<td> what </td>
+	<td> 2	</td>
+</table>
+</form>
+</body>
+</html>

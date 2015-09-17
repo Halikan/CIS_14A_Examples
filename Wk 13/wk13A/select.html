@@ -1,0 +1,33 @@
+<html>
+    <head>
+    <script language="JavaScript">
+    <!--
+    function openWin(){
+      var myInstance = document.myForm.mySelect;
+      var myWin = open("", "","width=450,height=200");
+
+      myWin.document.write("The length is: " + myInstance.length + "<br>");
+      myWin.document.write("The name is: " + myInstance.name + "<br>");
+      myWin.document.write("The selected option is located at position: ");
+      myWin.document.write(myInstance.selectedIndex + "<br>");
+      myWin.document.write("The type is: " + myInstance.type + "<br>");
+
+      myWin.document.write(myInstance.form.myButton.value);
+      myWin.document.close();
+    }
+    -->
+    </script>
+    </head>
+    <body>
+    <form name="myForm">My Favorite Sport is:
+      <select name="mySelect">
+        <option value=A>AA</option>
+        <option value=B>BB</option>
+        <option value=C>CC</option>
+        <option value=D>DD</option>
+      </select>
+    <input type=BUTTON value="Click to Process" name="myButton"
+             onClick="openWin()">
+    </form>
+    </body>
+    </html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+<title> Cartoon Quiz V </title>
+<script>
+function scoreQuestions(number, answer)
+{
+switch (number)
+	{
+	case 1:
+		if (answer=='b')
+			alert("Correct Answer.");
+		else
+			alert("Incorrect Answer");
+		break;
+	case 2:
+		if (answer=='c')
+			alert("Correct Answer.");
+		else
+			alert("Incorrect Answer");
+		break;
+
+	}
+}
+
+
+</script>
+</head>
+
+<body>
+<center>
+<h1> Cartoon Quiz V</h1>
+</center>
+Answer ALL the questions on the quiz.
+<form>
+<p>
+<b>1. What is the name of Walt Disney's famous mouse? </b></p>
+<input type=radio name=question1 value="a" onclick="scoreQuestions(1,this.value)">  Mighty Mouse <br>
+<input type=radio name=question1 value="b" onclick="scoreQuestions(1,this.value)">  Mickey Mouse <br>
+<input type=radio name=question1 value="c" onclick="scoreQuestions(1,this.value)">  Marty Mouse <br>
+<input type=radio name=question1 value="d" onclick="scoreQuestions(1,this.value)">  Melvin Mouse <br>
+
+<p>
+<b>2. The character Buzz Lightyear was featured in which animated film? </b></p>
+<input type=radio name=question2 value="a" onclick="scoreQuestions(2,this.value)">  Fantasia <br>
+<input type=radio name=question2 value="b" onclick="scoreQuestions(2,this.value)">  Hercules <br>
+<input type=radio name=question2 value="c" onclick="scoreQuestions(2,this.value)">  Toy Story <br>
+<input type=radio name=question2 value="d" onclick="scoreQuestions(2,this.value)">  Mulan <br>
+
+
+<!--
+	this :refers to the last object that has been used
+	form: a container for objects
+	p: paragraph
+	b: bold
+	br: break, as in next line
+
+	Each question has the same name (like question1) because it treats all 4 as a single form object.
+		otherwise you could select all 4 answers at the same time.
+
+	Switches can replace:
+	if (variable==value)
+		{******}
+	statements. Neat.
+-->

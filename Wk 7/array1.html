@@ -1,0 +1,25 @@
+<html>
+<script>
+function populateArray(table)
+{
+	table.A=46;
+	table.B=23;
+	table["B"]=14;
+	table["C"]=15;
+}
+
+function displayArray(table)
+{
+	document.write(table['A']	,"A.<br>");
+	document.write(table['B']	,"B.<br>");
+	document.write(table.B		,"B.<br>");
+	document.write(table.C		,"Pairs of C.");
+
+}
+
+var myArray=new Array();
+populateArray(myArray);
+displayArray(myArray);
+</script>
+</html>
+

@@ -1,0 +1,15 @@
+What would we need to design for the project?
+
+Design
+
+1. GUI
+	instructions
+	messages about roll, won,lost
+	showing both dies
+	the sum
+	
+2. Programming
+	die1
+	die2
+	sum
+	

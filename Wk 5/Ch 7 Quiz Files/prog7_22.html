@@ -1,0 +1,48 @@
+<html>
+<title> 7.22 </title>
+<script>
+var string;
+var digit;
+var new_digit;
+mid = "";
+encrypted = "";
+
+string = window.prompt("Please enter a 4 digit number.");
+
+while (string.length != 4)
+	{
+	string = window.prompt("The number must be 4 digits in length.");
+	}
+for (var i=0;i<string.length;i++)
+	{
+	digit = string.slice(i,i+1);
+	digit = parseInt(digit);
+	new_digit = (digit+7)%10;
+	if (i<2)
+		{
+		encrypted += new_digit;
+		}
+	else if (i==2)
+		{
+		mid = new_digit;
+		}
+	else
+		{
+		encrypted = mid + (new_digit + encrypted);
+		}
+	}
+
+document.writeln(encrypted);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

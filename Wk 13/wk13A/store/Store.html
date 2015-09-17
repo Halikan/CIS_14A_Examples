@@ -1,0 +1,74 @@
+<html>
+
+  <head>
+    <title>Center Park - Store</title>
+    
+    <script language="JavaScript">
+    <!--
+      function addItem( name, price )
+      {
+        var i = 1;
+        for( ; getCookieValue( "item" + i ) != "" ; i++ );
+        document.cookie = "item" + i + "=" + name + "," + price;
+        document.cookie = "items=" + i;
+      }
+
+      function getCookieValue( name )
+      {
+        var c = document.cookie;
+        var begin = c.indexOf( name );
+        if( begin < 0 ) return( "" );
+        begin += name.length + 1;
+        var end = c.indexOf( ";", begin );
+        if( end == -1 ) end = c.length;
+        return( c.slice( begin, end ) );
+      }
+
+      function setCustoms()
+      {
+        var bg = getCookieValue( "bgColor" );
+        var fg = getCookieValue( "fgColor" );
+        if( bg != "" ) document.bgColor = bg;
+        if( fg != "" ) document.fgColor = fg;
+      }
+    // -->
+    </script>
+  </head>
+  
+  <body onLoad="JavaScript: setCustoms();">
+    <b><font size="6">Center Park School Store -</font></b>
+    <font size="4">for all your school paraphernalia needs</font><br><br>
+    
+    <form>
+      <table border="2" width="100%">
+        <tr>
+          <td>School Hat - One size fits all, school emblem on front.</td>
+          <td>
+            $9.99</td><td align="center">
+            <input type="button" value="Add" onClick="JavaScript: addItem( 'School Hat - One size fits all school emblem on front.', 9.99 );">
+          </td>
+        </tr>
+        <tr>
+          <td>School T-Shirt - Small-Medium-Large, school emblem on front.</td>
+          <td>
+            $19.99</td><td align="center">
+            <input type="button" value="Add" onClick="JavaScript: addItem( 'School T-Shirt - Small-Medium-Large school emblem on front.', 19.99 );">
+          </td>
+        </tr>
+        <tr>
+          <td>Football Season Tickets - Watch the Bobcats all season long.</td>
+          <td>
+            $12.99</td><td align="center">
+            <input type="button" value="Add" onClick="JavaScript: addItem( 'Football Season Tickets - Watch the Bobcats all season long.', 12.99 );">
+          </td>
+        </tr>
+        <tr><td colspan="3" align="center">
+          <input type="button" value="View Cart" onClick="JavaScript: document.location='ViewCart.html';">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" value="Check Out" onClick="JavaScript: document.location='CheckOut.html';">
+        </td></tr>
+      </table>
+    </form>
+  </body>
+
+</html>

@@ -1,0 +1,34 @@
+<html>
+<title>7.13</title>
+<script>
+item1= 239.99;
+item2= 129.75;
+item3= 99.95;
+item4= 350.89;
+
+var earnings;
+var total_sales;
+
+
+
+item1_sales           = window.prompt("Please enter how many of item 1 were sold");
+item2_sales           = window.prompt("Please enter how many of item 2 were sold");
+item3_sales           = window.prompt("Please enter how many of item 3 were sold");
+item4_sales           = window.prompt("Please enter how many of item 4 were sold");
+
+document.writeln("item 1 was sold :" + item1_sales + " times.");
+document.writeln("item 2 was sold :" + item2_sales + " times.");
+document.writeln("item 3 was sold :" + item3_sales + " times.");
+document.writeln("item 4 was sold :" + item4_sales + " times.");
+
+total_sales = (item1*item1_sales) + (item2*item2_sales) + (item3*item3_sales) + (item4*item4_sales);
+earnings = 200 + (total_sales*.09);
+
+document.writeln("The total sales are :" + total_sales);
+
+document.writeln("The employee's earnings are :" + earnings);
+
+
+</script>
+
+</html>

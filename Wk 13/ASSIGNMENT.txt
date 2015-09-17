@@ -1,0 +1,15 @@
+final project
+
+in a 5x5 grid,
+create a specific file for each
+
+ex. fedora.pdf file
+FOR NOW, THE 5X5 TABLE GRID WITH THE FEDORA PDF SITE
+
+program with select options for students
+option button in upper right
+
+options in a list for groups
+search in upper left
+Something about some kind of search.
+Uh... I don't quite understand.

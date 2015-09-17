@@ -1,0 +1,50 @@
+<html>
+<!--		Programming Challenge
+			On Your Own:	8.4
+
+<head>
+<title>Costs</title>
+<script type="text/javascript">
+function cost()
+{
+	var again = "y"; var choice = "X"; var j = 0; var numItem = 0; var index;
+	var letter = new Array("A", "B", "C", "D", "E", "F", "G", "H");
+	var item = new Array("notebook", "pen", "mechanical pencil", "lead refill pack", "laptop case", "cell phone case", "3-ring binder", "3-hole paper refill");
+	var price = new Array(5.85, 4.95, 2.95, 0.98, 29.99, 18.99, 6.95, 2.00);
+	document.write("<table align = 'center' width = '80%'><tr><td><h2>Item</h2></td><td><h2>Price</h2></td></tr>");
+	for (j = 0; j < 8; j++)
+	{
+		document.write("<tr><td><p>" + letter[j] + ". " + item[j] + "</p></td><td><p> $ " + price[j] + "</p></td></tr>");
+	}
+	while(again == "y")
+	{
+		choice = prompt("Enter the letter that corresponds with the item you want to buy (i.e., enter 'A' to purchase the notebook or 'E' for the laptop case):");
+		numItem = parseInt(prompt("How many of these do you want?"));
+		index = 9;
+		for (j = 0; j < 8; j++)
+		{
+			if (letter[j] == choice)
+			{
+				index = j;
+				cost = price[index] * numItem;
+				document.write("<tr><td colspan = '2'><h3>Item: " + item[index] + ", Cost: $ " + price[index] + " each<br />Number requested: " + numItem + " Total Cost: $ " + cost.toFixed(2) + "</h3></td></tr>");
+				break;
+			}
+		}
+		if (index == 9)
+			document.write("<tr><td colspan = '2'><h3>Invalid entry</h3></td></tr>");
+		again = prompt("Do you want to purchase another item? (y/n)");
+	}
+	document.write("</table>");
+}
+</script>
+</head>
+<body>
+	<div style="width: 500px; margin: auto; margin-top: 100px; border: 1px solid black; padding: 5px; background-color: #E7E7E7;">
+		<p style="font-weight: bold;">Chapter 8 | Programming Challenge 4</p>
+		<p>Three parallel arrays will hold an item's name, price, and identifier. The user will enter the item to purchase and the number of that item he/she wants. The program will calculate the total cost and display it. </p>
+		<input type="button" onclick="cost()" value="Begin" />
+	</div>
+</body>
+</html>
+

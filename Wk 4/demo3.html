@@ -1,0 +1,41 @@
+<html>
+<head>
+<title> Conversions</title>
+<script>
+function inputCels()
+{
+	var cels = 100;
+	ansFah = doFahCalc(cels);
+	alert(cels + " Degrees Celsius is " + ansFah + " Degrees Fahrenheit");
+}
+
+function inputFah()
+{
+	var fah = 100;
+	ansCel = doCelCalc(fah);
+	alert(fah + " Degrees Fahrenheit is " + ansCel + " Degrees Celsius");
+}
+
+function doCelCalc(fah)
+{
+	var ans = ((Number(fah) - 32) / 1.8);
+	return (ans);
+}
+
+function doFahCalc(cels)
+{
+	var ans = ((1.8* Number(cels)) + 32);
+	return (ans);
+}
+
+
+
+</script>
+</head>
+
+<input type="button" value="Convert Celsius to Fahrenheit" onclick="inputCels();">
+<br>
+<br>
+<input type="button" value="Convert Fahrenheit to Celsius" onclick="inputFah();">
+
+</html>

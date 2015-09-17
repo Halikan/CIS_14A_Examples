@@ -1,0 +1,59 @@
+<html>
+<head>
+<Title> Final version of the cartoon Quiz </Title>
+<Script language="JavaScript1.2">
+
+var answer = new Array(2);
+var correctAnswer = new Array(2);
+
+correctAnswer[0] = "b";
+correctAnswer[1] = "c";
+
+function recordAnswer(question, ans)
+{
+   answer[question-1]=ans;
+}
+
+function scoreQuiz()
+{
+   var totalcorrect=0;
+   for(var count=0; count<2; count++)
+   {
+      if(answer[count]==correctAnswer[count])
+         ++totalcorrect;
+   }
+   alert(" You scored " + totalcorrect + " out of 2 answers correctly");
+}
+
+</script>
+</head>
+<body>
+
+<h1> Cartoon Quiz Final Version </h1><p>
+Answer all the questions on the quiz and then select the button to grade the quiz.<p>
+
+<form>
+<b>1. What is the name of Walt Disney's famous mouse? </b><p>
+<input type=radio name=question1 value="a"
+onclick="recordAnswer(1, this.value)">Mighty Mouse<BR>
+<input type=radio name=question1 value="b"
+onclick="recordAnswer(1, this.value)">Mickey Mouse<BR>
+<input type=radio name=question1 value="c"
+onclick="recordAnswer(1, this.value)">Marty Mouse<BR>
+<input type=radio name=question1 value="d"
+onclick="recordAnswer(1, this.value)">Melvin Mouse<p>
+
+<b>2. The characer Buzz Lightyear was featured in which animated film?</b><p>
+<input type=radio name=question2 value="a"
+onclick="recordAnswer(2, this.value)">Fantasia<BR>
+<input type=radio name=question2 value="b"
+onclick="recordAnswer(2, this.value)">Hercules<BR>
+<input type=radio name=question2 value="c"
+onclick="recordAnswer(2, this.value)">Toy Story<BR>
+<input type=radio name=question2 value="d"
+onclick="recordAnswer(2, this.value)">Mulan<p>
+
+<input type=button Value="Score" onclick="scoreQuiz();"><P>
+</form>
+</body>
+</html>

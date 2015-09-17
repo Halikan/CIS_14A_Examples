@@ -1,0 +1,27 @@
+<html>
+<head>
+<title> Calculating Pay </title>
+
+<script>
+function calcPay()
+{
+	var hours_worked=20;
+	var hourly_rate=10;
+	payout= doCalcPay(hours_worked,hourly_rate);
+	document.write("The total pay is: " +payout);
+}
+
+function doCalcPay(hours,rate)
+{
+	var pay;
+	pay = Number(hours)*Number(rate);
+	return pay;
+}
+</script>
+
+<script>
+calcPay()
+</script>
+
+</head>
+</html>
